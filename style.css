@@ -1,0 +1,26 @@
+.addnew{
+    position:fixed;
+    bottom:50px;
+    left:50px;
+}
+#todo:before{
+    content:"TODO";
+    display:block;
+    text-align: center;
+}
+#working:before{
+    content:"WORKING";
+    display:block;
+    text-align: center;
+}
+#completed:before{
+    content:"COMPLETED";
+    display:block;
+    text-align: center;
+}
+textarea{
+    max-width: 100%;
+    border-top:20px solid #acf;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
