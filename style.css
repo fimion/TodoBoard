@@ -18,11 +18,14 @@
     display:block;
     text-align: center;
 }
-li.draggable{
+li.task{
     border-top:20px solid #FF4081;
     margin-bottom: 10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+.task:after{
+   /* clear: both;*/
 }
 .close{
     display:inline;
@@ -36,11 +39,6 @@ li.draggable{
     border: none;
 
 }
-.draggable:after{
-   /* clear: both;*/
-}
-
-
 ul{
     min-height: 50px;
     display:block;
