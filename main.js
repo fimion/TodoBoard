@@ -1,9 +1,16 @@
 var newToDoFront = "<li class='task mdl-list__item'><div class='mdl-list__item-primary-content mdl-card mdl-shadow--2dp'><div class='mdl-card__title'><h2 class='mdl-card__title-text'>Todo</h2></div><div class='mdl-card__supporting-text'><textarea class='mdl-textfield__input'>";
 var newToDoEnd = "</textarea></div><div class='mdl-card__actions mdl-card--border'></div><div class='mdl-card__menu'><button class='close mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect'><i class='material-icons'>remove</i></button></div></div></li>";
-var cookie_lists = {"todo": "#todolist",
+var task_lists = {"todo": "#todolist",
                  "working": "#workinglist",
                  "completed": "workinglist"};
 var task_ID = 0;
+
+function addToDoTask(tasklist, contents){
+	$(task_lists[tasklist]).append(newToDoFront+contents+newToDoEnd);
+	$("button.close").on("click", function () {
+		$(this).closest("li").remove();
+	});
+}
 
 function getListInfo(selector){
     var ret = new Array();
@@ -28,12 +35,7 @@ function restoreCookie(){
 
 $(document).ready(function () {
 
-    $("button#addnew").on("click", function () {
-        $("#todolist").append(newToDoFront+newToDoEnd);
-        $("button.close").on("click", function () {
-            $(this).closest("li").remove();
-        });
-    });
+    $("button#addnew").on("click", function () {addToDoTask("todo");});
 
     $("ul.sortable").sortable({
         connectWith: "ul",
@@ -45,4 +47,3 @@ $(document).ready(function () {
 
 
 });
-
