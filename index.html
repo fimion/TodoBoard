@@ -4,26 +4,45 @@
         <title>TodoBoard</title>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-        <script src="https://use.fontawesome.com/0161d391a0.js"></script>
-        <link href="//cdn.muicss.com/mui-0.9.5/css/mui.min.css" rel="stylesheet" type="text/css" />
-        <script src="//cdn.muicss.com/mui-0.9.5/js/mui.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css" />
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
         <script src="js.cookie.js"></script>
         <script src="main.js"></script>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <main>
-            <div id="todo" class="mui-panel mui-col-md-4 mui--bg-primary-dark mui--text-light-secondary">
-                <ul id="todolist" class="sortable mui-list--unstyled">
-                </ul>
-            </div>
-            <div id="working" class="mui-panel mui-col-md-4 mui--bg-primary mui--text-light">
-                <ul id="workinglist" class="sortable mui-list--unstyled"></ul>
-            </div>
-            <div id="completed" class="mui-panel mui-col-md-4 mui--bg-primary-light mui--text-dark-hint">
-                <ul id="completedlist" class="sortable mui-list--unstyled"></ul>
-            </div>
-            <button name="addnew" class="addnew mui-btn mui-btn--large mui-btn--fab mui-btn--accent"><h1 class="fa fa-plus mui--text-display1"></h1></button>
-        </main>
+    <body class="mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header mdl-layout__header--scroll">
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title">TodoBoard</span>
+                </div>
+            </header>
+            <main class="mdl-layout__content">
+                <div class="page-content mdl-grid">
+                    <div id="todo" class="mdl-cell mdl-cell--4-col">
+                        <ul id="todolist" class="sortable mdl-list">
+                        </ul>
+                    </div>
+                    <div id="working" class="mdl-cell mdl-cell--4-col">
+                        <ul id="workinglist" class="sortable mdl-list"></ul>
+                    </div>
+                    <div id="completed" class="mdl-cell mdl-cell--4-col">
+                        <ul id="completedlist" class="sortable mdl-list"></ul>
+                    </div>
+                </div>
+            </main>
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo"><button id="addnew" name="addnew" class="addnew mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-shadow--2dp">
+                        <i class="material-icons">add</i>
+                    </button></div>
+                </div>
+                <div class="mdl-mini-footer__right-section">
+                    <div class="mdl-logo">TodoBoard</div>
+                </div>
+            </footer>
+
+        </div>
     </body>
 </html>
